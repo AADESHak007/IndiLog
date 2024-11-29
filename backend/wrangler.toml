@@ -1,0 +1,10 @@
+name = "backend"
+main = "src/index.ts"
+compatibility_date = "2024-11-18"
+
+ [vars]
+ DATABASE_URL="prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiMWVmZWNiZDEtYjczNS00ODU2LTk4ZGItNDg3NTg2MWJlMjEzIiwidGVuYW50X2lkIjoiZjAzOWJmZDZlODMzYmI2NjQ5NzBiOGU4ZGFkNDc2OWZhNjJiYWYyYWQyMTIzM2M4ZTQ0NWZhZDkyZGRmODMwYiIsImludGVybmFsX3NlY3JldCI6IjMxNGNhNmI4LTk0Y2YtNDE5Yi1hMjUyLTQxNGM2MWU3ZTljYSJ9.fBRIm9yXkh-Mf_HGrHdn-uD4ZeZKJfJWVgTT5Ao7UsY"
+ JWT_SECRET="sajbfabsjwjdnajfnknfjkafkln"
+ cloud_name='dbjsyhkrx'
+ api_key='488183773522663' 
+ api_secret='-AEx3HluOeo7qJkGZzGplAUikX8'
