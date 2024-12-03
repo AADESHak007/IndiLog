@@ -1,34 +1,37 @@
 import { useParams } from "react-router-dom";
-import { useBlog } from "../hooks"
+import { useBlog } from "../hooks";
 import DetailedBlog from "../components/DetailedBlog";
 import Loader from "../components/Loader";
 
-export const Blog = () =>{
- const {id} = useParams<{id:string}>() ;
-  const {loading ,blog} = useBlog({
-    id: id || "" ,
-  }
-  ) ;
+export const Blog = () => {
+    const { id } = useParams<{ id: string }>();
+    const { loading, blog } = useBlog({
+        id: id || "",
+    });
 
-  if(loading){
+    if (loading) {
+        return (
+            <div className="h-screen flex items-center justify-center">
+                <div className="text-center text-blue-500 text-xl sm:text-2xl md:text-3xl lg:text-4xl">
+                    <Loader />
+                </div>
+            </div>
+        );
+    }
+
+    if (!blog) {
+        return (
+            <div className="h-screen flex items-center justify-center">
+                <div className="text-center text-red-500 text-lg sm:text-xl md:text-2xl lg:text-3xl">
+                    Blog not found.
+                </div>
+            </div>
+        );
+    }
+
     return (
-      <div>
-        <div className='text-center h-screen flex justify-center items-center text-blue-500 text-4xl'>
-          <Loader />
-        </div>
-      </div>
-    )
-  }
-  if (!blog) {
-    return (
-        <div className="text-center h-screen flex justify-center items-center text-red-500 text-2xl">
-            Blog not found.
+        <div className="p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16">
+            <DetailedBlog blog={blog} />
         </div>
     );
-}
-    return (
-        <div className="p-5">
-          <DetailedBlog blog={blog}/>
-        </div>
-    )
-}
+};
